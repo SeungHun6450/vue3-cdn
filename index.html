@@ -10,9 +10,27 @@
 </head>
 <body>
   <div id="app">
-    <h1 @click="message = 'HEROPY!!'">
+    <!-- Vue.js의 데이터를 bind 하겠다. -->
+    <!-- <input v-bind:value="title"/> -->
+    <!-- <h1 @click="message = 'HEROPY!!'">
       {{ message }}
-    </h1>
+    </h1> -->
+
+    <!-- 영화 검색 만들기 -->
+    <!-- 양방향을 위해 v-bind: 대신 v-model 사용 -->
+    <input v-model="title" @keydown.enter="searchMovies(true)" />
+    <!-- 핸들러만 연결하거나, 실행하는 것 둘 다 같다. -->
+    <button @click="searchMovies(true)">Search!</button>
+    <ul>
+      <li v-for="movie in customMovies" :key="movie.id">
+        <img :src="movie.poster" alt="" height="40">
+        {{ movie.title }}
+      </li>
+    </ul>
+    <button v-if="movies.length" @click="searchMovies()">More..</button>
+    <h1>{{ msg }}</h1>
+    <h3>{{ reversedMsg }}</h3>
+    <button @click="reversedMsg = 132123">Set!</button>
   </div>
 </body>
 </html>
