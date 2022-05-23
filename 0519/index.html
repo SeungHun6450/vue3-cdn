@@ -11,32 +11,18 @@
 <body>
   <div id="app">
     <!-- v-bind : , v-on @ , v-model -->
-    <!-- <input :value="title" @input="changeInput" /> -->
-    <!-- <input :value="title" @input="title = $event.target.value" /> -->
-    <!-- <input v-model="title" /> -->
-    <!-- <h1>{{ title }}</h1> -->
+    <input :value="title" @input="changeInput" />
+    <input :value="title" @input="title = $event.target.value" />
+    <input v-model="title" />
+    <h1>{{ title }}</h1>
     
     <!-- lazy를 붙히면 enter나 tab같은 걸로 체크를 해야 바뀐다. -->
     <!-- $: 시멘틱(의미만부여)한, 내부에서 관리된 것, 그때 그때 의미가 다르다 -->
     <!-- Proxy: 참조형데이터(객체..)의 변경사항이 있는지, 읽으려고 하는지(조회)를 가로채서 getter,setter 로 사용한다 mdn참조 -->
     <!-- vue에서는 proxy로 값의 변경 유무에 따라 화면의 변경 유무를 정한다 -->
-    <!-- <input :value="title" @changer="title = $event.target.value" /> -->
-    <!-- <input v-model.lazy="title" /> -->
-    <!-- <h1>{{ title }}</h1> -->
-    
-    <!-- checkbox, radio -->
-    <!-- <input type="checkbox" v-model="checked" />
-    <input type="radio" name="Hun" value="H1" v-model="radio" />
-    <input type="radio" name="Hun" value="H2" v-model="radio" />
-    <h2>{{ radio }}</h2> -->
-    
-    <!-- <input v-model="title" /> -->
-    <!-- <input v-model.number="title" /> -->
-    <!-- <h1>{{ typeof title }}</h1> -->
-    
-    <input v-model.trim="title" />
+    <input :value="title" @changer="title = $event.target.value" />
+    <input v-model.lazy="title" />
     <h1>{{ title }}</h1>
-
 
   </div>
 </body>
